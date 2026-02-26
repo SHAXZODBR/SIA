@@ -83,11 +83,11 @@ export default function Home() {
               </div>
               <div className="img-mobile">
                 <Image
-                  src="/hero-mobile.png"
+                  src="/hero-mobile-v2.png"
                   alt="SIA AI Diagnostics Mobile"
-                  width={390}
-                  height={520}
-                  className="hero-image mobile-asset"
+                  width={320}
+                  height={400}
+                  className="hero-image mobile-asset-v2"
                   priority
                 />
               </div>
@@ -265,17 +265,26 @@ export default function Home() {
         }
         .img-desktop { display: block; }
 
-        .mobile-asset {
-          width: 100%;
+        .mobile-asset-v2 {
+          width: 80%;
+          max-width: 280px;
           height: auto;
-          max-height: 50vh;
-          object-fit: cover;
+          max-height: 35vh; /* Even shorter as requested */
+          object-fit: contain;
           border-radius: 20px;
+          margin: 0 auto;
+          display: block;
         }
 
         @media (max-width: 1250px) {
-          .img-mobile { display: block; }
+          .img-mobile { display: block; text-align: center; }
           .img-desktop { display: none; }
+        }
+
+        @media (max-width: 480px) {
+          .navbar { margin: 12px !important; } /* More space from wall */
+          .logo { font-size: 20px !important; gap: 8px !important; }
+          .hero { padding-top: 100px !important; }
         }
 
         /* Navigation */
@@ -286,7 +295,7 @@ export default function Home() {
           display: flex;
           align-items: center;
           z-index: 1000;
-          margin: 16px;
+          margin: 20px; /* Increased margin from wall */
           border-radius: 16px;
           transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
@@ -295,6 +304,7 @@ export default function Home() {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          padding: 0 24px; /* Inner padding for navbar content */
         }
 
         .logo {
