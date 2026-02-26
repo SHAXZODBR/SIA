@@ -47,7 +47,7 @@ body {
 
 /* Typographic Rules - Modern Scaling */
 h1 {
-  font-size: clamp(34px, 8vw, 76px);
+  font-size: clamp(34px, 8vw, 72px);
   /* Further reduced for wide Russian characters */
   font-weight: 900;
   line-height: 1.05;
@@ -56,8 +56,6 @@ h1 {
   margin-bottom: 0.5em;
   /* Ensure long words break if they exceed container width */
   overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: normal;
 }
 
 /* Language Specific Fixes - Russian is extra wide */
@@ -218,12 +216,47 @@ label {
 }
 
 /* Responsive Overrides */
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
   :root {
     --section-padding: 100px;
   }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px;
+  }
 
   .container {
-    padding: 0 24px;
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: clamp(30px, 12vw, 42px);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 1.25em;
+  }
+
+  p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .glass-premium {
+    backdrop-filter: blur(12px) saturate(160%);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 28px;
   }
 }

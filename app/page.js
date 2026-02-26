@@ -71,14 +71,26 @@ export default function Home() {
           </div>
           <div className="hero-visual">
             <div className="hero-card glass-premium">
-              <Image
-                src="/hero-ai.png"
-                alt="SIA AI Diagnostics"
-                width={700}
-                height={450}
-                className="hero-image"
-                priority
-              />
+              <div className="img-desktop">
+                <Image
+                  src="/hero-ai.png"
+                  alt="SIA AI Diagnostics"
+                  width={700}
+                  height={450}
+                  className="hero-image"
+                  priority
+                />
+              </div>
+              <div className="img-mobile">
+                <Image
+                  src="/hero-mobile.png"
+                  alt="SIA AI Diagnostics Mobile"
+                  width={400}
+                  height={600}
+                  className="hero-image"
+                  priority
+                />
+              </div>
               <div className="card-overlay">
                 <div className="scanner"></div>
               </div>
@@ -92,13 +104,24 @@ export default function Home() {
         <div className="container about-grid">
           <div className="about-visual">
             <div className="about-frame glass-premium">
-              <Image
-                src="/about-us.png"
-                alt="About SIA"
-                width={600}
-                height={600}
-                className="about-image"
-              />
+              <div className="img-desktop">
+                <Image
+                  src="/about-us.png"
+                  alt="About SIA"
+                  width={600}
+                  height={600}
+                  className="about-image"
+                />
+              </div>
+              <div className="img-mobile">
+                <Image
+                  src="/about-mobile.png"
+                  alt="About SIA Mobile"
+                  width={400}
+                  height={600}
+                  className="about-image"
+                />
+              </div>
             </div>
           </div>
           <div className="about-content">
@@ -232,6 +255,14 @@ export default function Home() {
           background-image: 
             radial-gradient(at 0% 0%, rgba(0, 112, 224, 0.15) 0px, transparent 50%),
             radial-gradient(at 100% 100%, rgba(0, 191, 168, 0.1) 0px, transparent 50%);
+        }
+
+        .img-mobile { display: none; }
+        .img-desktop { display: block; }
+
+        @media (max-width: 1250px) {
+          .img-mobile { display: block; }
+          .img-desktop { display: none; }
         }
 
         /* Navigation */
@@ -473,6 +504,11 @@ export default function Home() {
           position: relative;
         }
 
+        @media (max-width: 768px) {
+          .quote-card { padding: 30px 20px; }
+          .quote-text { font-size: 18px; }
+        }
+
         .quote-icon {
           font-size: 60px;
           position: absolute;
@@ -504,6 +540,11 @@ export default function Home() {
           position: relative;
           overflow: hidden;
           transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        @media (max-width: 768px) {
+          .p-card { padding: 30px; }
+          .p-card h3 { font-size: 24px; }
         }
 
         .p-card:hover { 
@@ -614,6 +655,10 @@ export default function Home() {
           border-radius: 32px;
         }
 
+        @media (max-width: 768px) {
+          .contact-form { padding: 30px 20px; border-radius: 24px; }
+        }
+
         .form-group {
           margin-bottom: 30px;
         }
@@ -690,7 +735,8 @@ export default function Home() {
           .hero { padding-top: 140px; }
           .hero-content { order: 2; }
           .hero-visual { order: 1; }
-          .hero-actions { justify-content: center; }
+          .hero-actions { justify-content: center; flex-direction: column; gap: 12px; }
+          .btn-primary, .btn-outline { width: 100%; }
           .hero-subtitle { margin-left: auto; margin-right: auto; }
 
           .about-visual { order: 2; }
