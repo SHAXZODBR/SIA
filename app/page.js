@@ -85,9 +85,9 @@ export default function Home() {
                 <Image
                   src="/hero-mobile.png"
                   alt="SIA AI Diagnostics Mobile"
-                  width={400}
-                  height={600}
-                  className="hero-image"
+                  width={390}
+                  height={520}
+                  className="hero-image mobile-asset"
                   priority
                 />
               </div>
@@ -117,9 +117,9 @@ export default function Home() {
                 <Image
                   src="/about-mobile.png"
                   alt="About SIA Mobile"
-                  width={400}
-                  height={600}
-                  className="about-image"
+                  width={390}
+                  height={520}
+                  className="about-image mobile-asset"
                 />
               </div>
             </div>
@@ -257,8 +257,21 @@ export default function Home() {
             radial-gradient(at 100% 100%, rgba(0, 191, 168, 0.1) 0px, transparent 50%);
         }
 
-        .img-mobile { display: none; }
+        .img-mobile { 
+          display: none; 
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
         .img-desktop { display: block; }
+
+        .mobile-asset {
+          width: 100%;
+          height: auto;
+          max-height: 50vh;
+          object-fit: cover;
+          border-radius: 20px;
+        }
 
         @media (max-width: 1250px) {
           .img-mobile { display: block; }
